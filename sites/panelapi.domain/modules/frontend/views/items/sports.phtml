@@ -1,0 +1,20 @@
+<section id="sports">
+    <h2 id="html-structure"><a href="javascript:;"> Sports / List</a></h2>
+    <div class="div-body">
+        <div class="param-title"><b>Url:</b> <?=API_ROOT;?>/sports/list</div>
+        <div class="param-title"><b>Methods:</b> <code>POST/GET</code></div>
+        <div class="param-title"><b>Request params:</b></div>
+        <div class="div-params bg-gray padding-left-offset">
+            <code>lang:</code> (type: STRING: en/ru)<br/>
+        </div>
+        <div class="param-title"><b>Response:</i> (success)</b></div>
+        <div class="div-params bg-gray padding-left-offset">
+            <b>Example</b>: <?=SITE_URL;?><?=API_ROOT;?>/sports/list?lang=en&skip=0&limit=10<br/>
+            <?php
+            $json = '{"status":"success","data":[{"id":1,"title":"Soccer"},{"id":3,"title":"Cricket"},{"id":8,"title":"Rugby Union"}]}';
+            ?>
+            <pre><?=$this->lib->jsonPrettyPrint($json);?></pre>
+        </div>
+    </div>
+</section>
+

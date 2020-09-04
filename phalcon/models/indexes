@@ -1,0 +1,119 @@
+db.users.dropIndexes()
+db.users.createIndex( {id : 1 }, { unique: true } )
+db.users.createIndex( {partner_id : 1 } )
+db.users.createIndex( {username : 1 } )
+db.users.createIndex( {fullname : 1 } )
+db.users.createIndex( {phone : 1 } )
+db.users.createIndex( {type : 1 } )
+db.users.createIndex( {is_deleted : 1 } )
+db.users.createIndex( {status : 1 } )
+db.users.createIndex( {email : 1 } )
+db.alerts.createIndex( {gender : 1 } )
+db.alerts.createIndex( {created_at : 1 } )
+
+
+
+db.alerts.dropIndexes()
+db.alerts.createIndex( {id : 1 }, { unique: true } )
+db.alerts.createIndex( {user_id : 1 } )
+db.alerts.createIndex( {type : 1 } )
+db.alerts.createIndex( {object_ids : 1 } )
+db.alerts.createIndex( {is_deleted : 1 } )
+db.alerts.createIndex( {created_at : 1 } )
+
+
+
+db.geo_objects.dropIndexes()
+db.geo_objects.createIndex( {user_id : 1 })
+db.geo_objects.createIndex( {type : 1 } )
+db.geo_objects.createIndex( {geometry : "2dsphere"})
+db.geo_objects.createIndex( {is_deleted : 1 } )
+db.geo_objects.createIndex( {created_at : 1 } )
+
+
+
+db.history.dropIndexes()
+db.history.createIndex( {object_id : 1 })
+db.history.createIndex( {action : 1 })
+db.history.createIndex( {started_at : 1 })
+db.history.createIndex( {end_at : 1 })
+db.history.createIndex( {is_deleted : 1 } )
+db.history.createIndex( {created_at : 1 } )
+﻿
+
+db.logs_tracking.dropIndexes()
+db.logs_tracking.createIndex( {object_id : 1 })
+db.logs_tracking.createIndex( {history_id : 1 })
+db.logs_tracking.createIndex( {imei : 1 })
+db.logs_tracking.createIndex( {datetime : 1 })
+db.logs_tracking.createIndex( {created_at : 1 })
+
+
+db.notifications.dropIndexes()
+db.notifications.createIndex( {object_id : 1 })
+db.notifications.createIndex( {alert_id : 1 })
+db.notifications.createIndex( {alert_type : 1 })
+db.notifications.createIndex( {is_deleted : 1 } )
+db.notifications.createIndex( {datetime : 1 } )
+db.notifications.createIndex( {created_at : 1 } )
+
+
+db.objects.dropIndexes()
+db.objects.createIndex( {id : 1 }, { unique: true } )
+db.objects.createIndex( {imei : 1 } )
+db.objects.createIndex( {geometry : "2dsphere"})
+db.objects.createIndex( {owner_id : 1 } )
+db.objects.createIndex( {users : 1 } )
+db.objects.createIndex( {type : 1 } )
+db.objects.createIndex( {phone : 1 } )
+db.objects.createIndex( {is_deleted : 1 } )
+db.objects.createIndex( {statistics_at : 1 } )
+db.objects.createIndex( {created_at : 1 } )
+
+
+db.objects_groups.dropIndexes()
+db.objects_groups.createIndex( {id : 1 }, { unique: true } )
+db.objects_groups.createIndex( {user_id : 1 } )
+db.objects_groups.createIndex( {object_ids : 1 } )
+db.objects_groups.createIndex( {is_deleted : 1 } )
+db.objects_groups.createIndex( {created_at : 1 } )
+
+
+db.parameters_countries.dropIndexes()
+db.parameters_countries.createIndex( {id : 1 }, { unique: true } )
+db.parameters_countries.createIndex( {parent_id : 1 } )
+db.parameters_countries.createIndex( {active : 1 } )
+db.parameters_countries.createIndex( {is_deleted : 1 } )
+db.parameters_countries.createIndex( {index : 1 } )
+db.parameters_countries.createIndex( {created_at : 1 } )
+
+
+db.parameters_object_types.dropIndexes()
+db.parameters_object_types.createIndex( {id : 1 }, { unique: true } )
+db.parameters_object_types.createIndex( {parent_id : 1 } )
+db.parameters_object_types.createIndex( {active : 1 } )
+db.parameters_object_types.createIndex( {is_deleted : 1 } )
+db.parameters_object_types.createIndex( {index : 1 } )
+db.parameters_object_types.createIndex( {created_at : 1 } )
+
+
+db.statistics.dropIndexes()
+db.statistics.createIndex( {object_id : 1 } )
+db.statistics.createIndex( {date : 1 } )
+db.statistics.createIndex( {datetime : 1 } )
+
+
+db.translations.dropIndexes()
+db.translations.createIndex( {template_id : 1 } )
+db.translations.createIndex( {key : 1 } )
+db.translations.createIndex( {translations : 1 } )
+db.translations.createIndex( {is_deleted : 1 } )
+db.translations.createIndex( {created_at : 1 } )
+
+
+db.user_tokens.dropIndexes()
+db.user_tokens.createIndex( {user_id : 1 } )
+db.user_tokens.createIndex( {token : 1 } )
+db.user_tokens.createIndex( {active : 1 } )
+db.user_tokens.createIndex( {created_at : 1 } )
+

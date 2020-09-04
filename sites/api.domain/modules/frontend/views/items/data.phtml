@@ -1,0 +1,41 @@
+<section id="data_countries">
+    <h2 id="html-structure"><a href="javascript:;"> Data / Countries</a></h2>
+    <div class="div-body">
+        <div class="param-title"><b>Url:</b> <?=API_ROOT;?>/data/countries</div>
+        <div class="param-title"><b>Method:</b> <code>POST/GET</code></div>
+        <div class="param-title"><b>Request params:</b></div>
+        <div class="div-params bg-gray padding-left-offset">
+            <code>lang:</code> (type: STRING: en/en)<br/>
+        </div>
+        <div class="param-title"><b>Response:</i> (success)</b></div>
+        <div class="div-params bg-gray padding-left-offset">
+            <b>Example</b>: <?=SITE_URL;?><?=API_ROOT;?>/data/countries<br/>
+            <?php
+            $json = '{"status":"success","data":[{"id":1,"title":"Andorra","sport_id":0},{"id":2,"title":"United Arab Emirates","sport_id":0},{"id":3,"title":"Afghanistan","sport_id":0}]}' ;
+            ?>
+            <pre><?=$this->lib->jsonPrettyPrint($json);?></pre>
+        </div>
+    </div>
+</section>
+
+<section id="data_languages">
+    <h2 id="html-structure"><a href="javascript:;"> Data / Languages</a></h2>
+    <div class="div-body">
+        <div class="param-title"><b>Url:</b> <?=API_ROOT;?>/data/languages</div>
+        <div class="param-title"><b>Method:</b> <code>POST/GET</code></div>
+        <div class="param-title"><b>Request params:</b></div>
+        <div class="div-params bg-gray padding-left-offset">
+            <code>lang:</code> (type: STRING: en/da)<br/>
+        </div>
+        <div class="param-title"><b>Response:</i> (success)</b></div>
+        <div class="div-params bg-gray padding-left-offset">
+            <b>Example</b>: <?=SITE_URL;?><?=API_ROOT;?>/data/languages<br/>
+            <?php
+            $json = '{"status":"success","data":[{"short_code":"en","title":"English"},{"short_code":"ru","title":"\u0420\u0443\u0441\u0441\u043a\u0438\u0439 \u044f\u0437\u044b\u043a"},{"short_code":"az","title":"Az\u0259rbaycan dili"}]}';
+            ?>
+            <pre><?=$this->lib->jsonPrettyPrint($json);?></pre>
+        </div>
+    </div>
+</section>
+
+

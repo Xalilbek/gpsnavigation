@@ -1,0 +1,72 @@
+<section id="registration">
+    <h2 id="html-structure"><a href="javascript:;"> Authentication / Registration</a></h2>
+    <div class="div-body">
+        <div class="param-title"><b>Url:</b> <?=API_ROOT;?>/register/citizen</div>
+        <div class="param-title"><b>Methods:</b> <code>POST/GET</code></div>
+        <div class="param-title"><b>Request params:</b></div>
+        <div class="div-params bg-gray padding-left-offset">
+            <code>lang:</code> (type: STRING: en/da)<br/>
+            <code>firstname:</code> (type: STRING)<br/>
+            <code>lastname:</code> (type: STRING)<br/>
+            <code>password:</code> (type: STRING)<br/>
+            <code>country:</code> (type: INT) <a href="#data_countries">get countries list here</a><br/>
+            <code>phone:</code>  (type: STRING, format: +380123456789)<br/>
+            <code>email:</code> (type: STRING)<br/>
+        </div>
+        <div class="param-title"><b>Response:</i> (success)</b></div>
+        <div class="div-params bg-gray padding-left-offset">
+            <b>Example</b>: <?=SITE_URL;?><?=API_ROOT;?>/auth/register?firstname=Testing&lastname=Testing&password=123456&phone=+380731033735&email=test@test.com&ssn=12346&place=Denmark&address=Streat+test+12&zipcode=10000&city=1<br/>
+            <?php
+            $json = '{"status":"success","description":"Added successfully","token":"4a65bf42eebb7e0d0c59ec786d17edd3","hash":"72f798a12ecc44b184ee9c890566ca3c","data":{"id":11,"firstname":"Testing","lastname":"Testing","phone":"380731033736","email":"test@test.com","ssn":"12346","place":"Denmark","address":"Streat test 12","zipcode":"10000","city":1,"type":"citizen"}}' ;
+            ?>
+            <pre><?=$this->lib->jsonPrettyPrint($json);?></pre>
+        </div>
+        <div class="param-title"><b>Response:</i> (error)</b></div>
+        <div class="div-params bg-gray padding-left-offset">
+            <b>Example</b>: <?=SITE_URL;?><?=API_ROOT;?>/auth/register?firstname=Testing&lastname=Testing&password=123456&phone=+380731033735&email=test@test.com&ssn=12346&place=Denmark&address=Streat+test+12&zipcode=10000&city=1<br/>
+            <?php
+            $json = '{"status":"error","error_code":1101,"description":"User exists"}';
+            ?>
+            <pre><?=$this->lib->jsonPrettyPrint($json);?></pre>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+<section id="authentication">
+    <h2 id="html-structure"><a href="javascript:;"> Authentication / Sign in</a></h2>
+    <div class="div-body">
+        <div class="param-title"><b>Url:</b> <?=API_ROOT;?>/auth/signin</div>
+        <div class="param-title"><b>Methods:</b> <code>POST/GET</code></div>
+        <div class="param-title"><b>Request params:</b></div>
+        <div class="div-params bg-gray padding-left-offset">
+            <code>lang:</code> (type: STRING: az/ru)<br/>
+            <code>phone:</code> (type: STRING, example: 380731033735<br/>
+            <code>password:</code>(type: STRING)<br/>
+            <code>type:</code>employee/citizen (default: citizen)<br/>
+        </div>
+        <div class="param-title"><b>Response:</i> (success)</b></div>
+        <div class="div-params bg-gray padding-left-offset">
+            <b>Example</b>: <?=SITE_URL;?><?=API_ROOT;?>/auth/signin?phone=+380731033736&password=123456&type=citizen<br/>
+            <?php
+            $json = '{"status":"success","description":"","token":"c22fdea5af31f40e0f68c4550583da17","hash":"425b5ee558174205281b5853ef4072a8","data":{"id":11,"firstname":"Testing","lastname":"Testing","phone":"380731033736","email":"test@test.com","ssn":"12346","place":"Denmark","address":"Streat test 12","zipcode":"10000","city":1,"type":"citizen"}}';
+            ?>
+            <pre><?=$this->lib->jsonPrettyPrint($json);?></pre>
+        </div>
+        <div class="param-title"><b>Response:</i> (error)</b></div>
+        <div class="div-params bg-gray padding-left-offset">
+            <b>Example</b>: <?=SITE_URL;?><?=API_ROOT;?>/auth/signin?phone=+380731033736&password=123456&type=citizen<br/>
+            <?php
+            $json = '{"status":"error","error_code":1001,"description":"Number or password is wrong"}';
+            ?>
+            <pre><?=$this->lib->jsonPrettyPrint($json);?></pre>
+        </div>
+    </div>
+</section>
+

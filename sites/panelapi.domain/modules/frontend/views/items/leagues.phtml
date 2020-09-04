@@ -1,0 +1,23 @@
+<section id="leagues">
+    <h2 id="html-structure"><a href="javascript:;"> Leagues / List</a></h2>
+    <div class="div-body">
+        <div class="param-title"><b>Url:</b> <?=API_ROOT;?>/leagues/list</div>
+        <div class="param-title"><b>Methods:</b> <code>POST/GET</code></div>
+        <div class="param-title"><b>Request params:</b></div>
+        <div class="div-params bg-gray padding-left-offset">
+            <code>lang:</code> (type: STRING: en/ru)<br/>
+            <code>sport_id:</code> (type: INT) <a href="#sports">get sport list here</a><br/>
+            <code>limit:</code> (type: INT, default: 30, min: 1)<br/>
+            <code>skip:</code> (type: INT, default: 0)<br/>
+        </div>
+        <div class="param-title"><b>Response:</i> (success)</b></div>
+        <div class="div-params bg-gray padding-left-offset">
+            <b>Example</b>: <?=SITE_URL;?><?=API_ROOT;?>/leagues/list?sport_id=1&lang=en&skip=0&limit=10<br/>
+            <?php
+            $json = '{"status":"success","data":[{"id":1,"title":"Mexico Liga de Ascenso Apertura","sport_id":1},{"id":2,"title":"Australia New South Wales League 2","sport_id":1},{"id":3,"title":"Australia Queensland Premier League Women","sport_id":1}]}';
+            ?>
+            <pre><?=$this->lib->jsonPrettyPrint($json);?></pre>
+        </div>
+    </div>
+</section>
+
